@@ -50,7 +50,7 @@ function get_current_action () {
 
 function build_prompt {
     local callback=${1:='custom_build_prompt'}
-    local enabled=`git config --local --get oh-my-git.enabled`
+    local enabled=`git config --local --get oh-my-git.enabled 2> /dev/null`
     if [[ ${enabled} == false ]]; then
         echo "${PSORG}"
         exit;
